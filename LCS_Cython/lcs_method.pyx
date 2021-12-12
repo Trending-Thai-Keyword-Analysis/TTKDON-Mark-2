@@ -63,7 +63,7 @@ cpdef lcs_algo(S1, S2, int m, int n):
 
 cpdef find_lcs(atta_list, newmm_list):
     cdef int l = <int>len(atta_list)
-    #cdef int i, j, len_w1_atta, len_w2_atta, maxl_atta, len_w1_newmm, len_w2_newmm, maxl_newmm
+    cdef int i, j, len_w1_atta, len_w2_atta, maxl_atta, len_w1_newmm, len_w2_newmm, maxl_newmm
     lcs_atta = []
     lcs_newmm = []
     for i in tqdm(range(l-1)):
