@@ -1,8 +1,9 @@
-# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files / Other files
 __pycache__/
 *.py[cod]
 *$py.class
 assets/Split_Date
+assets/Split_Date_JSON
 assets/Result
 
 # C extensions

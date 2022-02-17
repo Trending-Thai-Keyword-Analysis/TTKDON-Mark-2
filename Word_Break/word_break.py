@@ -5,10 +5,8 @@ tqdm.pandas()
 
 class WB:
 
-    def __init__(self, attacut_filename, newmm_filename):
-        self.attacut_stopword = self.read_stop_word(attacut_filename)
+    def __init__(self, newmm_filename):
         self.newmm_stopword = self.read_stop_word(newmm_filename)
-        self.attacut_WB = []
         self.newmm_WB = []
 
     def read_stop_word(self, filename):
@@ -18,8 +16,8 @@ class WB:
         text_file.close()
         return dict_list
 
-    def wb(self, news, engine):
-        segment = tokenize(str(news),keep_whitespace=False,engine=engine)
+    def wb(self, news):
+        segment = tokenize(str(news),keep_whitespace=False,engine="newmm")
         return segment
 
     def word_break(self, df):
@@ -29,9 +27,6 @@ class WB:
         column_name = list_column[1]
 
         for i in tqdm(range(l)):
-            wb_list = self.wb(df.iloc[i][column_name],"attacut")
-            remove_sw = [word for word in wb_list  if word not in self.attacut_stopword]
-            self.attacut_WB.append(remove_sw)
-            wb_list = self.wb(df.iloc[i][column_name],"newmm")
+            wb_list = self.wb(df.iloc[i][column_name])
             remove_sw = [word for word in wb_list  if word not in self.newmm_stopword]
             self.newmm_WB.append(remove_sw)
