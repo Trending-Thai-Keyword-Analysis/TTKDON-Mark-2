@@ -2,9 +2,9 @@
 __pycache__/
 *.py[cod]
 *$py.class
-assets/Split_Date
-assets/Split_Date_JSON
+assets/New_JSON_Split
 assets/Result
+assets/Split_Date_JSON
 
 # C extensions
 *.so
